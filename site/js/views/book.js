@@ -1,6 +1,8 @@
-var app = app || {};
+var Backbone = require('Backbone'),
+    _ = require('underscore'),
+    $ = require('jquery');
 
-app.BookView = Backbone.View.extend({
+var BookView = Backbone.View.extend({
   tagName: 'div',
   className: 'bookContainer',
   template: _.template( $('#bookTemplate').html() ),
@@ -24,3 +26,5 @@ app.BookView = Backbone.View.extend({
     this.remove();
   }
 });
+
+module.exports = BookView;

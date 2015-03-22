@@ -13,9 +13,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-console.log(application_root);
-console.log(path.join(application_root, 'site'));
-app.use(express.static(path.join(application_root)));
+app.use(express.static(path.join(application_root, 'site')));
 
 app.use(errorHandler({
   dumpExceptions: true,
@@ -25,6 +23,5 @@ app.use(errorHandler({
 var port = 4711;
 
 app.listen(port, function () {
-  console.log('Express server listening on port %d in %s mode',
-    port, app.settings.env);
+  console.log('Express server listening on port %d in %s mode', port, app.settings.env);
 });

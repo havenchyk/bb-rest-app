@@ -4,7 +4,9 @@
   "description": "Simple backbone app with rest",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && node server.js",
+    "build": "browserify site/js/app.js -o site/dist/bundle.js",
+    "watch-js": "watchify site/js/app.js -o site/dist/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/havenchyk/bb-rest-app",
   "devDependencies": {
+    "browserify": "^9.0.3",
+    "watchify": "^2.5.0",
     "webpack": "^1.7.3"
   },
   "dependencies": {

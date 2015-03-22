@@ -1,5 +1,8 @@
-var app = app || {};
+var Backbone = require('Backbone'),
+	Book = require('../models/book.js');
 
-app.Library = Backbone.Collection.extend({
-  model: app.Book
+var Library = Backbone.Collection.extend({
+  model: Book
 });
+
+module.exports = Library;

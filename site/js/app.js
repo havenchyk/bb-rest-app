@@ -1,4 +1,9 @@
-var app = app || {};
+var $ = require('jquery'),
+    Backbone = require('Backbone');
+
+Backbone.$ =  $;
+
+var LibraryView = require('./views/library.js');
 
 $(function() {
   var books = [{
@@ -28,5 +33,5 @@ $(function() {
     keywords: 'JavaScript Programming'
   }];
 
-  new app.LibraryView( books );
+  new LibraryView( books );
 });

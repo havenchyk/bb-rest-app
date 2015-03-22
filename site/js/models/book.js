@@ -1,6 +1,6 @@
-var app = app || {};
+var Backbone = require('Backbone');
 
-app.Book = Backbone.Model.extend({
+var Book = Backbone.Model.extend({
   defaults: {
     coverImage: 'img/placeholder.jpg',
     title: 'No title',
@@ -9,3 +9,5 @@ app.Book = Backbone.Model.extend({
     keywords: 'None'
   }
 });
+
+module.exports = Book;

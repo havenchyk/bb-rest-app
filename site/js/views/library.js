@@ -1,6 +1,10 @@
-var app = app || {};
+var Backbone = require('Backbone'),
+    $ = require('jquery'),
+    Book = require('../models/book.js'),
+    Library = require('../collections/library.js'),
+    BookView = require('./book.js');
 
-app.LibraryView = Backbone.View.extend({
+var LibraryView = Backbone.View.extend({
   el: '#books',
 
   events: {
@@ -8,7 +12,7 @@ app.LibraryView = Backbone.View.extend({
   },
 
   initialize: function( initialBooks ) {
-    this.collection = new app.Library( initialBooks );
+    this.collection = new Library( initialBooks );
     this.render();
 
     this.listenTo(this.collection, 'add', this.renderBook);
@@ -19,7 +23,7 @@ app.LibraryView = Backbone.View.extend({
   },
 
   renderBook: function( bookModel ) {
-    var bookView = new app.BookView({
+    var bookView = new BookView({
       model: bookModel
     });
 
@@ -37,6 +41,8 @@ app.LibraryView = Backbone.View.extend({
       }
     });
 
-    this.collection.add( new app.Book( formData ) );
+    this.collection.add( new Book( formData ) );
   }
 });
+
+module.exports = LibraryView;

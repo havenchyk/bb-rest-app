@@ -3,6 +3,8 @@ Backbone app
 
 Run `npm install`
 
-`node server.js`
+`npm run start`
 
-Static files will be available at `localhost:4711/site`
+`npm run watch-js` for browserifying of js files.
+
+Static files will be available at `localhost:4711`

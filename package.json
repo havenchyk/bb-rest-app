@@ -4,9 +4,10 @@
   "description": "Simple backbone app with rest",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node server.js",
-    "build": "browserify site/js/app.js -o site/dist/bundle.js",
-    "watch-js": "watchify site/js/app.js -o site/dist/bundle.js"
+    "start": "npm run build-js & npm run build-css & node server.js",
+    "build-js": "browserify site/js/app.js -o site/dist/bundle.js",
+    "watch-js": "watchify site/js/app.js -o site/dist/bundle.js",
+    "build-css": "parcelify site/js/app.js --debug -c site/dist/bundle.css"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/havenchyk/bb-rest-app",
   "devDependencies": {
     "browserify": "^9.0.3",
+    "parcelify": "^0.12.5",
     "watchify": "^2.5.0",
     "webpack": "^1.7.3"
   },
@@ -33,5 +35,8 @@
     "path": "^0.11.14",
     "semantic-ui-css": "^1.11.4",
     "underscore": "^1.8.2"
-  }
+  },
+  "style": [
+    "./node_modules/semantic-ui-css/semantic.css"
+  ]
 }

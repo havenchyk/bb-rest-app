@@ -4,7 +4,7 @@
   "description": "Simple backbone app with rest",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-js & npm run build-css & node server.js",
+    "start": "npm run build-js & npm run build-css & nodemon server.js",
     "build-js": "browserify site/js/app.js -o site/dist/bundle.js",
     "watch-js": "watchify site/js/app.js -o site/dist/bundle.js",
     "build-css": "parcelify site/js/app.js --debug -c site/dist/bundle.css"
@@ -32,6 +32,7 @@
     "express": "^4.12.3",
     "jquery": "^2.1.3",
     "mongoose": "^3.8.25",
+    "nodemon": "^1.3.7",
     "path": "^0.11.14",
     "semantic-ui-css": "^1.11.4",
     "underscore": "^1.8.2"
